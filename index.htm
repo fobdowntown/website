@@ -228,48 +228,62 @@ window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x
 					</div>
 					</div>
 					<div class="l-subsection"><div class="1-subsection-h g-html i-cf">
-<h3><span class="highlight"><strong>Where to find Us?</strong></span></h3>
-<h5><span><strong>65 East Liberty St. Toronto</strong></span></h5>
-<h5><span><strong>647-773-7133</strong></span></h5>
-  <div id="map" style="width: 100%; height: 400px;">
-<script type="text/javascript">
-    var locations = [
-['65 East Liberty', 43.638, -79.4140, 2]
-    ];
+<h3><span class="highlight"><strong>Service Area</strong></span></h3>
+    <div id="map" style="width: 100%; height: 450px;">
+  
+    <script>
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 14,
-       scrollwheel: false,
-      center: new google.maps.LatLng(43.638, -79.414),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
 
-    var infowindow = new google.maps.InfoWindow();
+      // This example creates a simple polygon representing the Bermuda Triangle.
 
-    var marker, i;
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          scrollwheel: false,
+          center: {lat: 43.652, lng: -79.396},
+          mapTypeId: 'terrain'
+        });
 
-    for (i = 0; i < locations.length; i++) { 
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
+        // Define the LatLng coordinates for the polygon's path.
+        var triangleCoords = [
+          {lat:  43.637, lng: -79.454},
+          {lat: 43.630, lng: -79.417},
+          {lat: 43.634, lng: -79.393},
+          {lat: 43.651, lng: -79.350},
+          {lat: 43.679, lng: -79.364},
+          {lat: 43.674, lng: -79.385},
+          {lat: 43.672, lng: -79.396},
+          {lat: 43.659, lng: -79.462},
+          {lat: 43.637, lng: -79.454}
+        ];
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }
-  </script></div>
+        // Construct the polygon.
+        var bermudaTriangle = new google.maps.Polygon({
+          paths: triangleCoords,
+          strokeColor: '#f78f8f',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#f78f8f',
+          fillOpacity: 0.35
+        });
+        bermudaTriangle.setMap(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC03yJynUMG7Wlp8XrWOGsQGg2bauQ3pWw&callback=initMap">
+    </script>
+  </div>
+												<p>
+<small>
+Coverage area: Liberty Village - West Queen West - Niagra - Fort York - City Place - King West Village - Chinatown - Entertainment District - Downtown Toronto - Old Toronto - Downtown West - South Core - St. Lawrence - Corktown - Church - Yonge Corridor - Harbourfront - Grange Park Bay Street Corridor - East Bayfront - Garden District - The Distillery District - Bathurst Quay - Little Portugal</small>
+</p>
             <a href="https://www.facebook.com/FobDowntown-123213321522856/" class="fa fa-facebook fa-3x" title="facebook" target="_blank" data-mode="1"></a> &nbsp;&nbsp; &nbsp;&nbsp;
             <a href="https://twitter.com/fobdowntown" class="fa fa-twitter fa-3x" title="twitter" target="_blank" data-mode="1"></a> &nbsp;&nbsp; &nbsp;&nbsp;
                         <a href="https://www.instagram.com/fobdowntowntoronto/" class="fa fa-instagram fa-3x" title="instagram" target="_blank" data-mode="1"></a> &nbsp;&nbsp; &nbsp;&nbsp;
 			<a href="https://www.yelp.ca/biz/fobdowntown-toronto" class="fa fa-yelp fa-3x" title="Yelp" target="_blank" data-mode="1"></a>
-						<p>
-<small>
-Coverage area: Liberty Village - West Queen West - Niagra - Fort York - City Place - King West Village - Chinatown - Entertainment District - Downtown Toronto - Old Toronto - Downtown West - South Core - St. Lawrence - Corktown - Church - Yonge Corridor - Harbourfront - Grange Park Bay Street Corridor - East Bayfront - Garden District - The Distillery District - Bathurst Quay - Little Portugal</small>
-</p>
+
+						  <h5><span>65 East Liberty St. Toronto</span></h5>
+<h5><span>647-773-7133</span></h5>
 <!-- /MAIN -->
 
 <!-- FOOTER -->
